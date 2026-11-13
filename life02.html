@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>니니랩 English 듣기</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<script>// 니니랩 English · 미국 학교 생활과 안전 / Unit 2 Restroom & Nurse's Office (화장실 규칙, 보건실 가는 법) — 샘플
+// KID: 아이 이름 (판매판은 'Mina' 등 기본값으로 교체)
+const KID = 'Mina';
+const I = { ink: '#2b2d6e', grn: '#22a06b', red: '#ff5a5a', yel: '#ffd25e', sky: '#8fd3ff', gry: '#cfd3e6', org: '#ff9a3c', pk: '#ffb6c8' };
+// 그림 1: 손 들기 + hall pass
+const figPass = () => {
+  let s = `<svg width="200" height="110" viewBox="0 0 200 110">`;
+  s += `<g transform="translate(60,70)"><circle cx="0" cy="-22" r="8" fill="${I.sky}" stroke="${I.ink}" stroke-width="1.4"/><rect x="-8" y="-13" width="16" height="22" rx="5" fill="${I.sky}" stroke="${I.ink}" stroke-width="1.4"/><line x1="6" y1="-10" x2="14" y2="-38" stroke="${I.ink}" stroke-width="3" stroke-linecap="round"/><line x1="-4" y1="9" x2="-5" y2="24" stroke="${I.ink}" stroke-width="2.6" stroke-linecap="round"/><line x1="4" y1="9" x2="5" y2="24" stroke="${I.ink}" stroke-width="2.6" stroke-linecap="round"/></g>`;
+  s += `<rect x="112" y="30" width="70" height="44" rx="6" fill="${I.yel}" stroke="${I.ink}" stroke-width="1.6" transform="rotate(-6 147 52)"/><text x="147" y="50" font-size="12" font-weight="800" text-anchor="middle" fill="${I.ink}" transform="rotate(-6 147 52)">HALL</text><text x="147" y="65" font-size="12" font-weight="800" text-anchor="middle" fill="${I.ink}" transform="rotate(-6 147 52)">PASS</text>`;
+  s += `<text x="60" y="106" font-size="10" font-weight="700" text-anchor="middle" fill="${I.ink}">손 들고 허락받기</text><text x="147" y="100" font-size="10" font-weight="700" text-anchor="middle" fill="${I.ink}">통행증 들고 가기</text>`;
+  return s + `</svg>`;
+};
+// 그림 2: 보건실 문
+const figNurse = () => {
+  let s = `<svg width="170" height="110" viewBox="0 0 170 110">`;
+  s += `<rect x="40" y="8" width="90" height="96" rx="4" fill="#fff" stroke="${I.ink}" stroke-width="2"/><rect x="52" y="18" width="66" height="22" rx="4" fill="${I.pk}" stroke="${I.ink}"/><text x="85" y="33" font-size="11" font-weight="800" text-anchor="middle" fill="${I.ink}">NURSE</text>`;
+  s += `<rect x="76" y="48" width="18" height="40" fill="${I.red}" rx="2"/><rect x="65" y="59" width="40" height="18" fill="${I.red}" rx="2"/><circle cx="120" cy="64" r="3.5" fill="${I.ink}"/>`;
+  return s + `</svg>`;
+};
+
+window.BOOK = {
+  subject: 'english',
+  brand: ['니니', '랩', 'English'],
+  series: '니니랩 English · 미국 학교 생활과 안전',
+  gradeLabel: '미국 초등학교 적응 · 생활과 안전',
+  unitNo: '02', unitTitle: "Restroom & Nurse's Office", startPage: 1,
+  cover: { title: "Restroom &<br>Nurse's Office", subtitle: '화장실 규칙, 보건실 가는 법 · Unit 2' },
+  tip: '부모님께: 미국 학교는 수업 중 화장실에 갈 때 허락과 통행증(hall pass)이 필요한 경우가 많고, 약은 아이가 직접 가지고 다니지 않고 보건실(school nurse)에서 관리하는 경우가 많아요. 열이 나면 집으로 보내고, 열이 내린 뒤 일정 시간이 지나야 등교하게 하는 학교가 많아요. 세부 규칙은 학교 안내문(handbook)을 꼭 확인해 주세요.',
+  pages: [
+    // ───────── 1 알아보기 ─────────
+    [
+      { type: 'stage', n: 1 },
+      { type: 'section', tag: 'Know', title: '미국 학교 화장실 규칙' },
+      { type: 'concept', letter: 'A', title: '수업 중에는 손 들고 허락받기',
+        svg: figPass(),
+        body: '미국 학교는 수업 중에 <b>말없이 나가면 안 돼요.</b> 손을 들고 "May I go to the restroom?" 하고 물어봐요. (Can I~, bathroom이라고 해도 돼요.)<br>허락을 받으면 <span class="hl">hall pass(통행증)</span>를 들고 가요. 반마다 손 신호를 정해 두기도 해요.<br>다녀오면 통행증을 제자리에 두고 조용히 자리에 앉아요.' },
+      { type: 'concept', letter: 'B', title: '화장실에서 지킬 것',
+        body: '① 볼일만 보고 <b>바로</b> 돌아와요. 복도에서 놀지 않아요.<br>② 변기에서 쓴 휴지는 <b>변기에 넣고 물을 내려요.</b> 손 닦은 종이 타월만 휴지통에 버려요. 손은 꼭 씻어요.<br>③ 화장실 문(칸막이) 아래가 많이 뚫려 있어요. 놀라지 않아도 돼요. 미국은 원래 그래요.<br>④ 급하면 쉬는 시간을 기다리지 말고 바로 말해요.' },
+      { type: 'section', tag: 'Know', title: '보건실(Nurse\'s Office)' },
+      { type: 'concept', letter: 'C', title: '아프거나 다치면 보건 선생님께',
+        svg: figNurse(),
+        body: '배나 머리가 아프면 담임 선생님께 "I don\'t feel well. May I go to the nurse?" 하고 <b>보건실(nurse)</b>에 가요. 혼자 참지 않아요.<br>보건 선생님이 열을 재고, 필요하면 <span class="hl">엄마·아빠에게 전화</span>해요.<br>약은 친구와 주고받으면 안 돼요. 보건실에서도 <b>부모님이 미리 맡겨 둔 약만</b> 먹을 수 있어요.' },
+      { type: 'tip', pose: 'idea', text: '아플 때 영어가 생각 안 나면? 아픈 곳을 <b>손으로 가리키며</b> "It hurts here."(여기가 아파요) 한마디면 충분해!' }
+    ],
+    // ───────── 2 말해 보기 ─────────
+    [
+      { type: 'stage', n: 2 },
+      { type: 'section', tag: 'Talk', title: '수업 중 화장실 가기' },
+      { type: 'dialog', scene: '수학 시간, 화장실이 급해요. 손을 들어요.', lines: [
+        { who: KID, me: true, en: 'Excuse me. May I go to the restroom?', ko: '저기요. 화장실 가도 돼요?' },
+        { who: 'Ms. Brown', en: 'Sure. Take the hall pass.', ko: '그럼. 통행증 가져가렴.' },
+        { who: KID, me: true, en: 'Thank you.', ko: '고맙습니다.' },
+        { who: 'Ms. Brown', en: 'Come right back, okay?', ko: '바로 돌아와, 알았지?' } ] },
+      { type: 'section', tag: 'Talk', title: '보건실에서' },
+      { type: 'dialog', scene: '배가 아파서 보건실에 왔어요.', lines: [
+        { who: 'Nurse', en: "Hi, sweetie. What's wrong?", ko: '안녕, 얘야. 어디가 안 좋니?' },
+        { who: KID, me: true, en: 'My stomach hurts. It hurts here.', ko: '배가 아파요. 여기가 아파요.' },
+        { who: 'Nurse', en: "Let's check your temperature.", ko: '열을 재 보자.' },
+        { who: 'Nurse', en: "You have a fever. I'll call your mom.", ko: '열이 있구나. 엄마한테 전화할게.' },
+        { who: KID, me: true, en: 'Thank you.', ko: '고맙습니다.' } ] },
+      { type: 'section', tag: 'Key', title: '꼭 알아들어야 할 말' },
+      { type: 'phrases', items: [
+        { en: 'Take the hall pass.', ko: '통행증 가져가.', note: '허락받았다는 뜻이에요.' },
+        { en: 'Come right back.', ko: '바로 돌아와.', note: '' },
+        { en: "Let's check your temperature.", ko: '열을 재 보자.', note: 'temperature = 체온, 열' },
+        { en: 'Do you need to go home?', ko: '집에 가야 할 것 같니?', note: '많이 아프면 "Yes."' } ] }
+    ],
+    // ───────── 3 확인하기 ─────────
+    [
+      { type: 'stage', n: 3 },
+      { type: 'grid', items: [
+        { label: '확인 1', level: '하', question: '수업 중에 화장실이 급해요. 어떻게 할까요?',
+          choices: ['말없이 조용히 나가요.', '손을 들고 허락받은 뒤 통행증을 들고 가요.', '쉬는 시간까지 꾹 참아요.'], answer: '②', lines: 0,
+          sol: { idea: '미국 교실은 선생님이 모든 학생이 어디 있는지 알아야 해서, 나갈 때 꼭 허락을 받아요.',
+            steps: ['손 들기', '"May I go to the restroom?"', 'hall pass 들고 가기 → 바로 돌아오기'],
+            check: '급한데 참으면 몸에 안 좋아요. 손 들고 말하면 돼요.' } },
+        { label: '확인 2', level: '하', question: '친구가 "머리 아프면 이 약 먹어." 하고 약을 줬어요. 어떻게 할까요?',
+          choices: ['고맙다고 하고 먹어요.', '받지 않고, 보건 선생님께 가요.', '집에 가져가요.'], answer: '②', lines: 0,
+          sol: { idea: '약은 친구끼리 주고받으면 안 돼요. 학교에서는 부모님이 미리 맡겨 둔 약만 보건 선생님이 줘요.',
+            steps: ['"No, thank you." 하고 받지 않기', '담임 선생님께 말하고 보건실로'],
+            parent: '아이에게 필요한 약이 있으면 보건실에 맡기는 방법을 학교에 물어보세요.' } },
+        { label: '확인 3', level: '중', question: '보건 선생님이 <span class="en say" style="font-weight:800">"Let\'s check your temperature."</span>라고 했어요. 무엇을 할까요?', lines: 1, answer: '열을 재요.',
+          sol: { idea: 'temperature는 온도, 몸에서는 체온(열)이에요.', steps: ['temperature = 체온', 'check = 확인하다', '그래서 "열을 재 보자"라는 뜻'] } },
+        { label: '확인 4', level: '중', question: '배가 아픈데 영어가 생각나지 않아요. 배를 가리키며 할 수 있는 말을 쓰세요.', lines: 1, answer: 'It hurts here.',
+          sol: { idea: '아픈 곳 이름을 몰라도 가리키면서 "It hurts here."라고 하면 돼요.', steps: ['It = 그것(아픈 곳)', 'hurts = 아파요', 'here = 여기'], more: '"My stomach hurts."(배가 아파요)도 같이 외워요. 어린아이들은 tummy라고도 해요.' } }
+      ] },
+      { type: 'stage', n: 4 },
+      { type: 'card', label: '집에서 연습', level: '중', title: ' 보건실 놀이',
+        question: '부모님이 담임 선생님과 보건 선생님을 맡아요. 상황에 맞게 말해 보세요.<br><span class="en say" style="font-size:14px;font-weight:800">(교실) May I go to the restroom? · I don\'t feel well. May I go to the nurse?<br>(보건실) It hurts here.</span><br>잘 된 것에 ✓ 하세요: □ 손 들고 화장실 물어보기 □ 보건실 가도 되는지 묻기 □ 아픈 곳 가리키며 말하기',
+        answer: '(활동)',
+        sol: { idea: '아플 때는 짧은 말 몇 개만 있으면 충분해요. 몸을 움직이며 연습하면 잘 떠올라요.',
+          steps: ['손 들기', 'May I go to the nurse?', '보건실에서 가리키며 It hurts here.'],
+          parent: '체온계를 들고 "Let\'s check your temperature." 하고 실제처럼 해 보세요.' } },
+      { type: 'summary', items: [
+        { title: '화장실', body: '손 들고 허락<br>hall pass 들고, 바로 돌아오기' },
+        { title: '보건실', body: '아프면 참지 말고 말하기<br>약은 맡겨 둔 것만' },
+        { title: '꼭 할 말', body: 'May I go to the restroom?<br>May I go to the nurse?' },
+        { title: '들을 말', body: 'Come right back.<br>Let\'s check your temperature.' } ] }
+    ]
+  ]
+};
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--main:#22a06b;--sub:#d9f5e6;--ink:#16352a}
+body{font-family:'Noto Sans KR',sans-serif;background:#f6f7f5;color:#222;padding-bottom:110px}
+header{background:var(--main);color:#fff;padding:18px 18px 16px}
+header .s{font-size:12px;opacity:.85}header h1{font-family:'Nunito',sans-serif;font-size:24px;line-height:1.2;margin-top:4px}
+.sec{font-size:13px;font-weight:900;color:var(--ink);margin:20px 16px 8px}
+.scene{font-size:12px;color:#777;margin:0 16px 8px}
+.ln{display:flex;gap:10px;align-items:flex-start;margin:0 12px 8px;padding:12px 14px;background:#fff;border-radius:14px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ln.me{background:var(--sub)}
+.ln .who{font-size:11px;font-weight:900;color:var(--ink);min-width:58px;padding-top:3px}
+.ln.me .who{color:var(--main)}
+.ln .tx{flex:1}
+.ln .en{font-family:'Nunito',sans-serif;font-size:19px;font-weight:800;line-height:1.35}
+.ln .ko{font-size:13px;color:#666;margin-top:3px}
+.ln .nt{font-size:12px;color:var(--main);margin-top:3px}
+.ln.play{outline:3px solid #ffcf3f}
+.ln.mute .en{color:transparent;text-shadow:0 0 9px rgba(0,0,0,.35)}
+.hideko .ko{display:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #ddd;padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.bar button{border:0;border-radius:22px;padding:10px 14px;font-size:14px;font-weight:700;background:#eee;color:#333}
+.bar button.on{background:var(--main);color:#fff}
+.bar .big{background:var(--ink);color:#fff;min-width:110px}
+#hint{position:fixed;left:12px;right:12px;max-width:440px;margin:0 auto;bottom:118px;background:#16352a;color:#fff;border-radius:14px;padding:12px 14px;font-size:15px;font-weight:700;text-align:center;display:none;z-index:5}#hint.on{display:block}#hint.mic{background:#22a06b}#heard{position:fixed;left:12px;right:12px;max-width:440px;margin:0 auto;bottom:96px;text-align:center;font-family:Nunito,sans-serif;font-size:14px;color:#16352a;z-index:5}
+.hint{font-size:12px;color:#888;margin:14px 16px}
+.ln.rec{outline:3px solid #ff4f7b}
+#stars{font-size:14px;margin-top:6px;letter-spacing:1px}
+#quiz{position:fixed;inset:0;background:rgba(22,53,42,.55);display:none;align-items:center;justify-content:center;z-index:4;padding:16px}
+#quiz.on{display:flex}
+#quiz .card{background:#fff;border-radius:18px;padding:20px 18px;width:100%;max-width:440px;text-align:center}
+#quiz .qn{font-size:12px;color:#888;font-weight:700}
+#quiz .q{font-family:Nunito,sans-serif;font-size:20px;font-weight:800;margin:10px 0 4px;color:var(--ink)}
+#quiz .qk{font-size:13px;color:#777}
+#quiz .ak{font-size:15px;font-weight:700;margin-top:16px;color:var(--main)}
+#quiz .a{font-family:Nunito,sans-serif;font-size:20px;font-weight:800;margin-top:6px;min-height:28px;color:var(--main)}
+#quiz .qb{margin-top:16px;display:flex;gap:8px;justify-content:center}
+#quiz .qb button{border:0;border-radius:20px;padding:10px 16px;font-weight:700;font-size:14px;background:#eee}
+#quiz .qb .go{background:var(--ink);color:#fff}
+</style></head><body>
+<header><div class="s" id="hs"></div><h1 id="ht"></h1><div id="stars"></div></header>
+<div id="list"></div>
+<p class="hint">문장을 누르면 한 번 들려줘요.<br><b>역할 놀이</b>: 내 대사 차례에 멈춰서 직접 말해요.<br><b>따라 하기</b>: 켜고 문장을 누르면 듣고 → 내 목소리 녹음 → 내 목소리와 원래 소리를 이어서 들려줘요.<br><b>질문 시간</b>: 상대 말을 듣고 내가 대답해 보는 퀴즈예요.</p>
+<div id="hint"></div><div id="heard"></div>
+<div id="quiz"><div class="card"><div class="qn" id="qn"></div><div class="q" id="qq"></div><div class="qk" id="qk"></div><div class="ak" id="qak"></div><div class="a" id="qa"></div><div class="qb"><button id="qrep">🔁 다시 듣기</button><button class="go" id="qnext">다음 ▶</button><button id="qend">그만</button></div></div></div>
+<div class="bar">
+  <button class="big" id="all">▶ 전체 듣기</button>
+  <button id="spd">속도 0.85</button>
+  <button id="ko">한국어 끄기</button>
+  <button id="role">역할 놀이</button>
+  <button id="rep">따라 하기</button>
+  <button id="qz">질문 시간</button>
+</div>
+<script>
+const B = window.BOOK; const T = Object.assign({main:'#22a06b',sub:'#d9f5e6',ink:'#16352a'}, B.theme||{});
+for (const [k,v] of Object.entries(T)) document.documentElement.style.setProperty('--'+k, v);
+document.getElementById('hs').textContent = `${B.series} · Unit ${B.unitNo}`;
+document.getElementById('ht').textContent = B.unitTitle;
+const strip = s => (s||'').replace(/<[^>]+>/g,'').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&');
+const items = []; let html=''; let grp=0;
+for (const pg of B.pages) for (const b of pg) {
+  if (b.type==='section' && (b.tag)) html += `<div class="sec">${b.tag} · ${strip(b.title)}</div>`;
+  if (b.type==='dialog') { grp++; if (b.scene) html += `<div class="scene">${strip(b.scene)}</div>`;
+    for (const l of b.lines){ const i=items.length; items.push({en:strip(l.en), ko:strip(l.ko), me:!!l.me, g:grp});
+      html += `<div class="ln ${l.me?'me':''}" data-i="${i}"><div class="who">${strip(l.who)}</div><div class="tx"><div class="en">${strip(l.en)}</div><div class="ko">${strip(l.ko)}</div></div></div>`; } }
+  if (b.type==='phrases') for (const x of b.items){ const i=items.length; items.push({en:strip(x.en), ko:strip(x.ko), me:false, g:0});
+      html += `<div class="ln" data-i="${i}"><div class="tx"><div class="en">${strip(x.en)}</div><div class="ko">${strip(x.ko)}</div>${x.note?`<div class="nt">${strip(x.note)}</div>`:''}</div></div>`; }
+}
+document.getElementById('list').innerHTML = html;
+const LS=(k,v)=>{ try{ if(v===undefined) return JSON.parse(localStorage.getItem('nl_'+k)); localStorage.setItem('nl_'+k, JSON.stringify(v)); }catch(e){ return null; } };
+let rate=LS('rate')||0.75, role=false, running=false, repMode=false;
+const rows=[...document.querySelectorAll('.ln')];
+function voice(){ const vs=speechSynthesis.getVoices(); return vs.find(v=>v.lang==='en-US'&&/Samantha|Google US|Jenny|Aria|Ava|Allison/i.test(v.name))||vs.find(v=>v.lang==='en-US')||vs.find(v=>v.lang.startsWith('en')); }
+function say(i){ return new Promise(res=>{ const it=items[i]; rows.forEach(r=>r.classList.remove('play')); const row=rows[i]; row.classList.add('play'); row.scrollIntoView({block:'center',behavior:'smooth'});
+  if (role && it.me){ waitTurn(row,it).then(res); return; }
+  const u=new SpeechSynthesisUtterance(it.en); u.lang='en-US'; u.rate=rate; const v=voice(); if(v) u.voice=v;
+  u.onend=()=>{row.classList.remove('play');res();}; u.onerror=()=>res(); speechSynthesis.speak(u); }); }
+rows.forEach(r=>r.onclick=()=>{ running=false; speechSynthesis.cancel(); if(repMode) repeatRow(+r.dataset.i); else say(+r.dataset.i); });
+document.getElementById('all').onclick=async e=>{ if(running){running=false;speechSynthesis.cancel();e.target.textContent='▶ 전체 듣기';return;}
+  running=true; e.target.textContent='■ 멈춤'; for(let i=0;i<items.length&&running;i++){ await say(i); await new Promise(r=>setTimeout(r,500)); } if(running){ const p=prog(); p.listen=1; saveProg(p); } running=false; e.target.textContent='▶ 전체 듣기'; };
+const SPD=[0.6,0.75,0.9,1], SPN={0.6:'아주 천천히',0.75:'천천히',0.9:'조금 빠르게',1:'보통'};
+const spdB=document.getElementById('spd'); const showSpd=()=>spdB.textContent='속도: '+(SPN[rate]||rate); showSpd();
+spdB.onclick=()=>{ const i=SPD.indexOf(rate); rate=SPD[(i+1)%SPD.length]; LS('rate',rate); showSpd(); };
+const koB=document.getElementById('ko'); const setKo=h=>{ document.body.classList.toggle('hideko',h); koB.classList.toggle('on',h); koB.textContent=h?'한국어 켜기':'한국어 끄기'; LS('hideko',h); }; setKo(!!LS('hideko')); koB.onclick=()=>setKo(!document.body.classList.contains('hideko'));
+document.getElementById('role').onclick=e=>{ role=!role; e.target.classList.toggle('on',role); rows.forEach(r=>{ const it=items[+r.dataset.i]; r.classList.toggle('mute', role&&it.me); }); };
+/* 역할 놀이: 내 차례 → 마이크로 듣고 말이 끝나면 넘어감, 마이크가 안 되면 탭으로 넘어감 */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let srBlocked = !SR, skipFn = null;
+const hint = document.getElementById('hint'), heardEl = document.getElementById('heard');
+const tapMsg = '👆 말한 다음 화면을 탭하면 넘어가요';
+function waitTurn(row, it){ return new Promise(res=>{
+  let done=false, rec=null, tries=0, heard='';
+  const fin=()=>{ if(done) return; done=true; skipFn=null; try{ rec && rec.abort(); }catch(e){} hint.classList.remove('on','mic'); row.classList.remove('play'); setTimeout(()=>{ heardEl.textContent=''; res(); }, 500); };
+  skipFn = fin; heardEl.textContent=''; heardEl.dataset.last='';
+  const showTap=()=>{ hint.className='on'; hint.textContent=tapMsg; };
+  const start=()=>{ if(done) return; if(srBlocked){ showTap(); return; }
+    hint.className='on mic'; hint.textContent='🎤 말해 보세요! 말이 끝나면 넘어가요 (탭하면 바로 넘어가요)';
+    rec = new SR(); rec.lang='en-US'; rec.interimResults=true; rec.continuous=false; rec.maxAlternatives=1;
+    rec.onresult=e=>{ heard=[...e.results].map(r=>r[0].transcript).join(' ').trim(); if(heard){ heardEl.textContent='🗣 '+heard; heardEl.dataset.last=heard; } };
+    rec.onerror=e=>{ if(/not-allowed|service-not-allowed|audio-capture|network/.test(e.error)){ srBlocked=true; } };
+    rec.onend=()=>{ if(done) return; if(heard){ setTimeout(fin, 700); } else if(!srBlocked && tries<2){ tries++; start(); } else { showTap(); } };
+    try{ rec.start(); }catch(e){ srBlocked=true; showTap(); } };
+  start();
+}); }
+document.addEventListener('click', e=>{ if(skipFn && !e.target.closest('.bar') && !e.target.closest('.qb')){ e.stopPropagation(); e.preventDefault(); skipFn(); } }, true);
+document.getElementById('all').addEventListener('click', ()=>{ if(!running && skipFn) skipFn(); });
+/* 진도 별 */
+const PK='prog_'+(location.pathname.split('/').pop()||'page');
+function prog(){ return LS(PK)||{}; }
+function saveProg(p){ LS(PK,p); drawStars(); }
+function drawStars(){ const p=prog(); const s=[]; if(p.listen) s.push('🎧 전체 듣기 완료'); if(p.rep) s.push('🎙 따라 하기 '+p.rep+'문장'); if(p.quiz!=null) s.push('⭐'.repeat(p.quiz)+'☆'.repeat(Math.max(0,(p.qmax||5)-p.quiz))+' 질문 시간'); document.getElementById('stars').textContent=s.join('  ·  '); }
+drawStars();
+function speakP(text){ return new Promise(res=>{ const u=new SpeechSynthesisUtterance(text); u.lang='en-US'; u.rate=rate; const v=voice(); if(v) u.voice=v; u.onend=res; u.onerror=res; speechSynthesis.speak(u); }); }
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+/* 따라 하기: 듣기 → 녹음 → 내 목소리 → 원래 소리 */
+let micStream=null, recBusy=false, stopRec=null;
+const repB=document.getElementById('rep');
+repB.onclick=()=>{ repMode=!repMode; repB.classList.toggle('on',repMode); if(repMode && role) document.getElementById('role').click(); hint.className=repMode?'on':''; hint.textContent=repMode?'🎙 따라 할 문장을 눌러 보세요':''; if(repMode) setTimeout(()=>{ if(!recBusy) hint.className=''; },2500); };
+async function repeatRow(i){
+  if(recBusy){ stopRec&&stopRec(); return; }
+  if(!navigator.mediaDevices||!window.MediaRecorder){ hint.className='on'; hint.textContent='이 폰에서는 녹음이 안 돼요. 듣고 소리 내어 따라 해 보세요'; await say(i); return; }
+  recBusy=true; const row=rows[i], it=items[i];
+  try{
+    row.classList.add('play'); row.scrollIntoView({block:'center',behavior:'smooth'});
+    hint.className='on'; hint.textContent='👂 잘 들어 보세요'; await speakP(it.en);
+    if(!micStream) micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+    const mr=new MediaRecorder(micStream); const chunks=[]; mr.ondataavailable=e=>e.data.size&&chunks.push(e.data);
+    const stopped=new Promise(r=>mr.onstop=r);
+    row.classList.remove('play'); row.classList.add('rec'); hint.className='on mic'; hint.style.background='#ff4f7b'; hint.textContent='🎙 따라 말해 보세요! (다 말하면 문장을 한 번 더 누르세요)';
+    mr.start(); const words=it.en.split(/\s+/).length; const lim=Math.min(8000, 2500+words*600);
+    await Promise.race([wait(lim), new Promise(r=>stopRec=r)]); stopRec=null; mr.stop(); await stopped; row.classList.remove('rec');
+    hint.style.background=''; hint.className='on'; hint.textContent='🔊 내 목소리';
+    const au=new Audio(URL.createObjectURL(new Blob(chunks,{type:mr.mimeType||'audio/webm'}))); await new Promise(r=>{ au.onended=r; au.onerror=r; au.play().catch(r); });
+    await wait(300); hint.textContent='🔊 원래 소리'; row.classList.add('play'); await speakP(it.en); row.classList.remove('play');
+    const p=prog(); p.rep=(p.rep||0)+1; saveProg(p);
+    hint.textContent='잘했어요! 다른 문장도 눌러 보세요'; setTimeout(()=>{ if(!recBusy) hint.className=''; },2000);
+  }catch(e){ hint.style.background=''; hint.className='on'; hint.textContent='마이크를 쓸 수 없어요. 듣고 소리 내어 따라 해 보세요'; row.classList.remove('rec','play'); }
+  recBusy=false;
+}
+/* 질문 시간: 상대 말 듣기 → 내가 대답 → 정답 듣기 */
+const pairs=[]; for(let i=0;i<items.length-1;i++) if(!items[i].me && items[i+1].me && items[i].g && items[i].g===items[i+1].g) pairs.push(i);
+const qzB=document.getElementById('qz'); if(!pairs.length) qzB.style.display='none';
+const Q={on:false};
+const qEl=id=>document.getElementById(id);
+function qEnd(){ Q.on=false; speechSynthesis.cancel(); if(skipFn) skipFn(); qEl('quiz').classList.remove('on'); hint.className=''; }
+async function qAsk(){
+  const n=Q.k, i=Q.list[n]; const a=items[i+1];
+  qEl('qn').textContent='질문 '+(n+1)+' / '+Q.list.length; qEl('qq').textContent=items[i].en; qEl('qk').textContent=document.body.classList.contains('hideko')?'':items[i].ko;
+  qEl('qak').textContent='내 대답: '+(a.ko||'')+' → 영어로?'; qEl('qa').textContent=''; qEl('qnext').disabled=true;
+  await speakP(items[i].en); if(!Q.on) return;
+  await waitTurn(rows[i+1], a); if(!Q.on) return;
+  const said=(heardEl.dataset.last||'').toLowerCase(), want=a.en.toLowerCase().replace(/[^a-z' ]/g,'');
+  const ws=want.split(' ').filter(w=>w.length>2); const hit=ws.filter(w=>said.includes(w)).length;
+  Q.score += (!said || !ws.length || hit>=Math.ceil(ws.length/2)) ? 1 : 0;
+  qEl('qa').textContent=a.en; await speakP(a.en); qEl('qnext').disabled=false;
+}
+qzB.onclick=()=>{ if(role) document.getElementById('role').click(); if(repMode) repB.click(); running=false; speechSynthesis.cancel();
+  const sh=[...pairs].sort(()=>Math.random()-.5).slice(0,5); Object.assign(Q,{on:true,list:sh,k:0,score:0}); qEl('quiz').classList.add('on'); qAsk(); };
+qEl('qrep').onclick=async e=>{ e.stopPropagation(); speechSynthesis.cancel(); await speakP(items[Q.list[Q.k]].en); };
+qEl('qnext').onclick=e=>{ e.stopPropagation(); Q.k++; if(Q.k<Q.list.length){ qAsk(); return; }
+  const p=prog(); p.quiz=Math.max(p.quiz||0,Q.score); p.qmax=Q.list.length; saveProg(p);
+  qEl('qn').textContent='끝!'; qEl('qq').textContent='⭐'.repeat(Q.score)+'☆'.repeat(Q.list.length-Q.score); qEl('qk').textContent=''; qEl('qak').textContent=Q.score===Q.list.length?'전부 대답했어요! 최고! 🎉':'잘했어요! 한 번 더 하면 별이 늘어요'; qEl('qa').textContent=''; qEl('qnext').disabled=true; };
+qEl('qend').onclick=e=>{ e.stopPropagation(); qEnd(); };
+speechSynthesis.getVoices();
+</script></body></html>
