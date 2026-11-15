@@ -4,7 +4,6 @@
 <title>니니랩 English 듣기</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 <script>// 니니랩 English · 미국 학교 생활과 안전 / Unit 2 Restroom & Nurse's Office (화장실 규칙, 보건실 가는 법) — 샘플
-// KID: 아이 이름 (판매판은 'Mina' 등 기본값으로 교체)
 const KID = 'Mina';
 const I = { ink: '#2b2d6e', grn: '#22a06b', red: '#ff5a5a', yel: '#ffd25e', sky: '#8fd3ff', gry: '#cfd3e6', org: '#ff9a3c', pk: '#ffb6c8' };
 // 그림 1: 손 들기 + hall pass
@@ -30,7 +29,7 @@ window.BOOK = {
   gradeLabel: '미국 초등학교 적응 · 생활과 안전',
   unitNo: '02', unitTitle: "Restroom & Nurse's Office", startPage: 1,
   cover: { title: "Restroom &<br>Nurse's Office", subtitle: '화장실 규칙, 보건실 가는 법 · Unit 2' },
-  tip: '부모님께: 미국 학교는 수업 중 화장실에 갈 때 허락과 통행증(hall pass)이 필요한 경우가 많고, 약은 아이가 직접 가지고 다니지 않고 보건실(school nurse)에서 관리하는 경우가 많아요. 열이 나면 집으로 보내고, 열이 내린 뒤 일정 시간이 지나야 등교하게 하는 학교가 많아요. 세부 규칙은 학교 안내문(handbook)을 꼭 확인해 주세요.',
+  tip: '부모님께: 미국 학교는 수업 중 화장실에 갈 때 허락과 통행증(hall pass)이 필요한 경우가 많고, 약은 아이가 직접 가지고 다니지 않고 보건실(nurse\'s office, clinic이라고도 해요)에서 관리하는 경우가 많아요. 보건 선생님이 매일 있지 않아 사무실(front office)에서 맡는 학교도 있어요. 약을 맡길 때 동의서(의사 서명이 필요한 곳도 많아요)가 필요한지 학교에 물어보세요. 열이 나면 집으로 보내고, 열이 내린 뒤 일정 시간이 지나야 등교하게 하는 학교가 많아요. 세부 규칙은 학교 안내문(handbook)을 꼭 확인해 주세요.',
   pages: [
     // ───────── 1 알아보기 ─────────
     [
@@ -40,11 +39,11 @@ window.BOOK = {
         svg: figPass(),
         body: '미국 학교는 수업 중에 <b>말없이 나가면 안 돼요.</b> 손을 들고 "May I go to the restroom?" 하고 물어봐요. (Can I~, bathroom이라고 해도 돼요.)<br>허락을 받으면 <span class="hl">hall pass(통행증)</span>를 들고 가요. 반마다 손 신호를 정해 두기도 해요.<br>다녀오면 통행증을 제자리에 두고 조용히 자리에 앉아요.' },
       { type: 'concept', letter: 'B', title: '화장실에서 지킬 것',
-        body: '① 볼일만 보고 <b>바로</b> 돌아와요. 복도에서 놀지 않아요.<br>② 변기에서 쓴 휴지는 <b>변기에 넣고 물을 내려요.</b> 손 닦은 종이 타월만 휴지통에 버려요. 손은 꼭 씻어요.<br>③ 화장실 문(칸막이) 아래가 많이 뚫려 있어요. 놀라지 않아도 돼요. 미국은 원래 그래요.<br>④ 급하면 쉬는 시간을 기다리지 말고 바로 말해요.' },
+        body: '① 볼일만 보고 <b>바로</b> 돌아와요. 복도에서 놀지 않아요.<br>② 변기에서 쓴 휴지는 <b>변기에 넣고 물을 내려요.</b> 손 닦은 종이 타월만 휴지통에 버려요. 손은 꼭 씻어요.<br>③ 화장실 문(칸막이) 아래가 많이 뚫려 있어요. 놀라지 않아도 돼요. 미국은 그런 곳이 많아요.<br>④ 급하면 쉬는 시간을 기다리지 말고 바로 말해요.' },
       { type: 'section', tag: 'Know', title: '보건실(Nurse\'s Office)' },
       { type: 'concept', letter: 'C', title: '아프거나 다치면 보건 선생님께',
         svg: figNurse(),
-        body: '배나 머리가 아프면 담임 선생님께 "I don\'t feel well. May I go to the nurse?" 하고 <b>보건실(nurse)</b>에 가요. 혼자 참지 않아요.<br>보건 선생님이 열을 재고, 필요하면 <span class="hl">엄마·아빠에게 전화</span>해요.<br>약은 친구와 주고받으면 안 돼요. 보건실에서도 <b>부모님이 미리 맡겨 둔 약만</b> 먹을 수 있어요.' },
+        body: '배나 머리가 아프면 담임 선생님께 "I don\'t feel well. May I go to the nurse?" 하고 <b>보건실(nurse)</b>에 가요. 혼자 참지 않아요.<br>보건 선생님이 열을 재고, 필요하면 <span class="hl">엄마·아빠에게 전화</span>해요.<br>약은 친구와 주고받으면 안 돼요. 보건실에서도 <b>부모님이 미리 맡겨 둔 약만</b> 먹을 수 있는 곳이 많아요.' },
       { type: 'tip', pose: 'idea', text: '아플 때 영어가 생각 안 나면? 아픈 곳을 <b>손으로 가리키며</b> "It hurts here."(여기가 아파요) 한마디면 충분해!' }
     ],
     // ───────── 2 말해 보기 ─────────
@@ -52,7 +51,7 @@ window.BOOK = {
       { type: 'stage', n: 2 },
       { type: 'section', tag: 'Talk', title: '수업 중 화장실 가기' },
       { type: 'dialog', scene: '수학 시간, 화장실이 급해요. 손을 들어요.', lines: [
-        { who: KID, me: true, en: 'Excuse me. May I go to the restroom?', ko: '저기요. 화장실 가도 돼요?' },
+        { who: KID, me: true, en: 'Excuse me. May I go to the restroom?', ko: '선생님, 화장실 가도 돼요?' },
         { who: 'Ms. Brown', en: 'Sure. Take the hall pass.', ko: '그럼. 통행증 가져가렴.' },
         { who: KID, me: true, en: 'Thank you.', ko: '고맙습니다.' },
         { who: 'Ms. Brown', en: 'Come right back, okay?', ko: '바로 돌아와, 알았지?' } ] },
@@ -67,7 +66,7 @@ window.BOOK = {
       { type: 'phrases', items: [
         { en: 'Take the hall pass.', ko: '통행증 가져가.', note: '허락받았다는 뜻이에요.' },
         { en: 'Come right back.', ko: '바로 돌아와.', note: '' },
-        { en: "Let's check your temperature.", ko: '열을 재 보자.', note: 'temperature = 체온, 열' },
+        { en: "Let's check your temperature.", ko: '열을 재 보자.', note: 'temperature = 체온 (열이 있다 = have a fever)' },
         { en: 'Do you need to go home?', ko: '집에 가야 할 것 같니?', note: '많이 아프면 "Yes."' } ] }
     ],
     // ───────── 3 확인하기 ─────────
