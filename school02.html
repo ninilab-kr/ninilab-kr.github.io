@@ -19,8 +19,8 @@ window.BOOK = {
       { type: 'stage', n: 1 },
       { type: 'section', tag: 'Talk', title: '연필이 없어요! 빌려 달라고 말하기' },
       { type: 'listen' },
-      { type: 'dialog', scene: '수업 시작 직전. 미나가 연필을 안 가져온 걸 알았어요.', lines: [
-        { who: 'Emma', en: 'Time for math! Take out your pencil.', ko: '수학 시간이야! 연필 꺼내.' },
+      { type: 'dialog', scene: `수업 시작 직전. ${KID}의 필통에 연필이 없어요!`, lines: [
+        { who: 'Emma', en: "It's math time! Get your pencil out.", ko: '수학 시간이야! 연필 꺼내자.' },
         { who: KID, me: true, en: "Oh no. I don't have a pencil.", ko: '어떡해. 나 연필이 없어.' },
         { who: 'Emma', en: 'No problem. I have an extra one.', ko: '괜찮아. 나 여분이 하나 있어.' },
         { who: KID, me: true, en: 'Can I borrow it, please?', ko: '그거 빌려도 돼?' },
@@ -36,10 +36,10 @@ window.BOOK = {
       { type: 'tip', pose: 'idea', text: '미국 교실에는 공용 연필 통이 있거나 선생님이 여분을 빌려 주는 경우가 많아. 먼저 <b>Can I borrow a pencil?</b>이라고 물어보면 돼!' }
     ],
     [
-      { type: 'stage', n: 1 },
+      { type: 'stage', n: 2 },
       { type: 'section', tag: 'Ask', title: '선생님께 질문하고 도움 받기' },
       { type: 'phrases', items: [
-        { en: 'Excuse me, Ms. Brown.', ko: '선생님, 저기요.', note: '말을 걸기 전에 먼저 부르는 말' },
+        { en: 'Excuse me, Ms. Brown.', ko: '선생님, 저기요.', note: '"Teacher!" 말고 Ms./Mr. + 성으로 불러요.' },
         { en: 'I have a question.', ko: '질문이 있어요.', note: '손을 들고 말해요.' },
         { en: "I don't know what to do.", ko: '뭘 해야 할지 모르겠어요.', note: '활동 방법을 놓쳤을 때' },
         { en: 'Can you help me, please?', ko: '도와주실 수 있어요?', note: 'please를 붙이면 더 공손해요.' },
@@ -68,11 +68,12 @@ window.BOOK = {
     [
       { type: 'stage', n: 3 },
       { type: 'grid', items: [
-        { label: '연습 3', level: '중', question: '빈칸에 알맞은 말을 쓰세요.<br><span class="en" style="font-size:15px;font-weight:800">Can I ________ your glue stick?</span><br><span style="font-size:12px">(뜻: 네 딱풀 빌려도 돼?)</span>', lines: 2, answer: 'borrow',
+        { label: '연습 3', level: '중', question: '빈칸에 알맞은 말을 쓰세요.<br><span class="en" style="font-size:15px;font-weight:800">Can I ________ your glue stick?</span><br><span style="font-size:12px">(뜻: 네 딱풀 빌려도 돼? · b로 시작)</span>', lines: 2, answer: 'borrow (use도 정답)',
           sol: { idea: '돌려줄 물건을 잠깐 쓸 때는 borrow(빌리다)를 써요.',
             steps: ['"빌려도 돼?" → Can I borrow ~?', 'glue stick은 뒤에 물건 이름으로 오기'],
+            alt: '"Can I use your glue stick?(써도 돼?)"도 자연스러운 정답이에요.',
             mistake: "'lend'는 '빌려주다'라서 반대 뜻이에요. 내가 빌릴 때는 borrow예요." } },
-        { label: '연습 4', level: '중', question: '친구가 먼저 줄을 서 있어요. 알맞은 말을 쓰세요.<br><span class="en" style="font-size:15px;font-weight:800">Please wait your ________.</span><br><span style="font-size:12px">(뜻: 네 차례를 기다려 줘.)</span>', lines: 2, answer: 'turn',
+        { label: '연습 4', level: '중', question: '친구가 줄에 끼어들려고 해요. 선생님이 뭐라고 할까요?<br><span class="en" style="font-size:15px;font-weight:800">Please wait your ________.</span><br><span style="font-size:12px">(뜻: 네 차례를 기다려 줘.)</span>', lines: 2, answer: 'turn',
           sol: { idea: 'turn은 "차례"예요. 순서를 기다리라고 할 때 wait your turn이라고 해요.',
             steps: ['차례 = turn', 'wait your turn = 네 차례를 기다리다'],
             check: "내 차례라고 말할 때는 'It's my turn.'. 같은 단어 turn을 써요.",
@@ -82,10 +83,10 @@ window.BOOK = {
         answer: '(활동)', sol: { idea: '실제 상황처럼 물건을 주고받으며 말하면 표현이 몸에 붙어요.', steps: ['처음엔 책을 보며', '두 번째부터는 물건을 직접 건네며', '마지막엔 물건 이름을 바꿔서'], parent: "틀려도 고치지 말고 'Good try!'로 끝까지 말하게 해 주세요." } },
       { type: 'stage', n: 4 },
       { type: 'card', label: '나만의 문장', level: '상', title: '', question: '빌리고 싶은 물건을 넣어 나만의 문장을 만들어 보세요.<br><span class="en" style="font-size:16px;font-weight:800;line-height:2.4">Can I borrow your ______________?<br>I don\'t have a ______________.<br>I will give it ______________.</span>',
-        answer: "(예) Can I borrow your scissors? I don't have a ruler. I will give it back.",
+        answer: "(예) Can I borrow your ruler? I don't have a ruler. I will give it back.",
         sol: { idea: '빈칸 하나만 바꿔도 새 문장이 돼요. 물건 이름 단어만 늘리면 표현이 쑥쑥 커져요.',
           steps: ['Can I borrow your + 물건(pencil, ruler, crayon …)', "I don't have a + 물건", 'I will give it back (돌려줄게요)'],
-          mistake: "'give it back'은 세 단어를 한 덩어리로 외워요. 'give back it'이라고 하지 않아요.",
+          mistake: "'give it back'은 세 단어를 한 덩어리로 외워요. 'give back it'이라고 하지 않아요. scissors·crayons처럼 여러 개를 말할 땐 'give them back'이에요.",
           more: '다음 유닛에서는 화장실·물·아플 때 쓰는 표현을 배워요.' } }
     ]
   ]

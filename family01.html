@@ -4,7 +4,7 @@
 <title>니니랩 English 듣기</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 <script>// 니니랩 English · 미국 생활 첫걸음 (가족편) / Unit 1 Talking with the School
-// ME: 학습자(부모) 이름. 판매용은 'Me' 또는 'Mina' 등으로 교체
+// ME: 학습자(부모) 대사 표시 이름. 판매용은 'Me' 그대로 두기 (아이 이름 Mina로 바꾸면 대화가 깨짐)
 const ME = 'Me';
 const big = s => `<span class="en say" style="font-size:15px;font-weight:800">${s}</span>`;
 window.BOOK = {
@@ -32,13 +32,13 @@ window.BOOK = {
       { type: 'section', tag: 'Key', title: '오늘의 핵심 표현' },
       { type: 'phrases', items: [
         { en: "I'd like to enroll my daughter.", ko: '딸을 등록하고 싶어요.', note: "I'd like to ~는 I want to보다 공손해요." },
-        { en: 'Do you have proof of address?', ko: '거주 증명 서류 있으세요?', note: '임대 계약서·공과금 고지서 등을 요구하는 경우가 많아요.' },
-        { en: 'Shot records', ko: '예방접종 기록', note: '"immunization records"라고도 해요.' },
+        { en: 'Do you have proof of address?', ko: '거주 증명 서류 있으세요?', note: '"proof of residence"라고도 해요. 임대 계약서·공과금 고지서 등' },
+        { en: 'Shot records', ko: '예방접종 기록', note: '"immunization records"라고도 해요. 주(state) 지정 양식을 요구하는 곳이 많아요.' },
         { en: 'Can I bring them tomorrow?', ko: '내일 가져와도 될까요?', note: 'Can I ~? = 허락·가능 여부 묻기' } ] },
-      { type: 'tip', pose: 'idea', text: '등록 필요 서류는 학교·교육청마다 달라요. 방문 전에 <b>학교 홈페이지나 전화</b>로 목록을 확인하는 것이 안전해요.' }
+      { type: 'tip', pose: 'idea', text: '등록 필요 서류는 학교·교육청마다 달라요. 방문 전에 <b>학교 홈페이지나 전화</b>로 목록을 확인하는 것이 안전해요. 한국 예방접종 기록은 현지 병원·보건소에서 <b>주 양식으로 옮겨 받아야</b> 할 수 있어요.' }
     ],
     [
-      { type: 'stage', n: 1 },
+      { type: 'stage', n: 2 },
       { type: 'section', tag: 'Conference', title: '담임 면담 & ESL 지원 묻기' },
       { type: 'phrases', items: [
         { en: 'Thank you for meeting with me.', ko: '시간 내 주셔서 감사해요.', note: '면담 시작 인사. 미국은 감사 표현이 기본이에요.' },
@@ -52,7 +52,7 @@ window.BOOK = {
         { en: "She's just starting to learn English.", ko: '이제 막 영어를 배우기 시작했어요.', note: '솔직히 알리면 학교가 도울 방법을 찾기 쉬워요.' },
         { en: 'She understands more than she speaks.', ko: '말하는 것보다 이해를 더 해요.', note: '초보 학습자에게 아주 흔한 상태예요.' },
         { en: 'She will be absent tomorrow.', ko: '내일 결석할 거예요.', note: '이메일 한 줄: "She has a fever."도 가능' },
-        { en: 'She has a doctor\'s appointment.', ko: '병원 예약이 있어요.', note: '결석 사유는 짧게 쓰면 충분해요.' } ] },
+        { en: 'She has a doctor\'s appointment.', ko: '병원 예약이 있어요.', note: '사유서 기한·횟수는 학교 핸드북 확인' } ] },
       { type: 'grid', items: [
         { label: '연습 1', level: '하', question: '학교에 딸을 <b>등록하고 싶다</b>고 공손하게 말하는 문장은?',
           choices: ["I'd like to enroll my daughter.", 'Give me a school.', 'My daughter is school.'], answer: '①', lines: 0,
@@ -71,7 +71,7 @@ window.BOOK = {
     [
       { type: 'stage', n: 3 },
       { type: 'grid', items: [
-        { label: '연습 3', level: '중', question: '빈칸에 알맞은 말을 쓰세요.<br><span class="en" style="font-size:15px;font-weight:800">Does the school ________ ESL support?</span>', lines: 1, answer: 'offer',
+        { label: '연습 3', level: '중', question: '빈칸에 알맞은 말을 쓰세요.<br><span class="en" style="font-size:15px;font-weight:800">Does the school ________ ESL support?</span><br><span style="font-size:12px">(제공하다 · o로 시작)</span>', lines: 1, answer: 'offer (have·provide도 정답)',
           sol: { read: '학교가 ESL 지원을 "제공하는지" 묻는 문장의 빈칸에 알맞은 동사를 쓰는 문제예요.', idea: 'offer = (서비스·프로그램을) 제공하다. 학교나 가게가 무엇을 해 주는지 물을 때 써요.',
             steps: ['Does the school ~? = 학교가 ~하나요?', '제공 여부를 묻는 동사: offer', 'offer 뒤에 프로그램 이름: ESL support'],
             mistake: 'Does 뒤에는 동사 원형이라 offers가 아니라 offer예요.',
@@ -79,18 +79,18 @@ window.BOOK = {
         { label: '연습 4', level: '중', question: '결석 이메일 한 줄을 완성하세요.<br><span class="en" style="font-size:15px;font-weight:800">Hello, Ms. Brown. Mina will be ________ tomorrow.</span>', lines: 1, answer: 'absent',
           sol: { read: '아이가 내일 "결석한다"는 뜻의 단어를 이메일 문장 빈칸에 쓰는 문제예요.', idea: 'absent = 결석한. "be absent"로 "결석하다"를 표현해요.',
             steps: ['will be + 상태 = ~일 거예요', '결석한 상태: absent', '이유를 덧붙이면: She has a fever.'],
-            check: '이메일 끝에 "Thank you!"를 붙이면 공손해요. 이름과 반 이름도 쓰는 것이 좋아요.',
+            check: '이메일 끝에 "Thank you!"를 붙이면 공손해요. 이름과 반 이름도 쓰는 것이 좋아요. 복귀 후 서면 사유서(excuse note)를 기한 안에 내야 하는 학교가 많으니 핸드북을 확인하세요.',
             mistake: 'absent의 반대는 present(출석한)예요.' } }
       ] },
       { type: 'card', label: '실전 롤플레이', level: '중', title: '배우자와 면담 연습하기', question: '한 사람은 담임 선생님, 한 사람은 나를 맡아 보세요. 한 번 할 때마다 ○에 색칠해요.<br><span style="font-size:22px;letter-spacing:6px">○ ○ ○ ○ ○</span><br>써 본 표현에 ✓ 하세요: □ Thank you for meeting with me. □ How is she doing in class? □ Does the school offer ESL support? □ How can I help her at home?',
         answer: '(활동)', sol: { idea: '면담은 짧고 명확한 질문 두세 개만 준비해도 충분해요. 소리 내어 연습하면 실전에서 훨씬 덜 떨려요.', steps: ['처음엔 책을 보며 읽기', '두 번째부터는 내 대사를 가리고 말하기', '선생님 역은 질문 순서를 바꿔서 해 보기'], parent: '통역 앱을 준비해 가도 괜찮아요. 하지만 인사와 핵심 질문은 직접 말하면 인상이 달라져요.' } },
       { type: 'stage', n: 4 },
-      { type: 'card', label: '내 상황에 맞게 바꿔 쓰기', level: '상', title: '', question: '우리 아이 상황에 맞게 빈칸을 채워 소리 내어 읽어 보세요.<br><span class="en" style="font-size:16px;font-weight:800;line-height:2.4">Hi, I\'m ______________\'s mom.<br>She is in grade ______.<br>She ______________ English.<br>Could you tell me about ______________?</span>',
-        answer: `(예) Hi, I'm Mina's mom. She is in grade 3. She is just starting to learn English. Could you tell me about ESL support?`,
+      { type: 'card', label: '내 상황에 맞게 바꿔 쓰기', level: '상', title: '', question: '우리 아이 상황에 맞게 빈칸을 채워 소리 내어 읽어 보세요.<br><span class="en" style="font-size:16px;font-weight:800;line-height:2.4">Hi, I\'m ______________\'s mom.<br>She is in ______ grade.<br>She ______________ English.<br>Could you tell me about ______________?</span>',
+        answer: `(예) Hi, I'm Mina's mom. She is in third grade. She is just starting to learn English. Could you tell me about ESL support?`,
         sol: { idea: '아이 소개 → 학년 → 영어 수준 → 궁금한 점 순서로 말하면 짧아도 필요한 정보가 다 전달돼요.',
-          steps: ["I'm + 아이 이름's mom", 'She/He is in grade + 숫자', '영어 수준: is just starting to learn / understands more than she speaks', 'Could you tell me about + 궁금한 것?'],
+          steps: ["I'm + 아이 이름's mom", 'She/He is in + 서수 + grade (third grade)', '영어 수준: is just starting to learn / understands more than she speaks', 'Could you tell me about + 궁금한 것?'],
           mistake: '"I\'m Mina\'s mom."이지 "I\'m mom of Mina."라고 하지 않아요.',
-          more: '아빠라면 mom 대신 dad를 쓰면 돼요. 학년은 미국식(grade 3)으로 말해요.' } }
+          more: '아빠라면 mom 대신 dad를 쓰면 돼요. 학년은 미국식으로 서수 + grade(third grade)로 말해요.' } }
     ]
   ]
 };
